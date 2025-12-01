@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMEGA Hair Saloon - Premium Men's Grooming in Nandyala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0D1117;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621607512344-9ad9dc9c2770?q=80&w=2070') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background: #ffffff;
+            color: #0D1117;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #0D1117;
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #161B22 0%, #21262D 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #30363D;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffffff, #f0f0f0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+            border-color: #ffffff;
+        }
+
+        .service-card h3 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card p {
+            color: #ccc;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #0D1117;
+            color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #ffffff;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 80px 0;
+            background: #0D1117;
+            color: white;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #161B22;
+            padding: 3rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #30363D;
+            border-radius: 5px;
+            background: #21262D;
+            color: white;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #ffffff;
+            color: #0D1117;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #0D1117;
+            color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: #161B22;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0D1117;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                height: 80vh;
+                padding: 20px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .cta-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .service-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .service-card p {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .price {
+                font-size: 1.8rem;
+            }
+            
+            .about {
+                padding: 60px 0;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-text h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+            
+            .booking {
+                padding: 60px 0;
+            }
+            
+            .booking-form {
+                padding: 2rem 1.5rem;
+                margin: 0 15px;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 15px;
+                font-size: 1rem;
+            }
+            
+            #currentLocationBtn {
+                width: 100%;
+                padding: 12px 15px !important;
+                font-size: 1rem !important;
+                margin-top: 15px !important;
+            }
+            
+            .submit-btn {
+                padding: 18px;
+                font-size: 1.1rem;
+            }
+            
+            .contact {
+                padding: 60px 0;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .contact-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Extra Small Mobile */
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .booking-form {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">OMEGA HAIR SALOON</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>OMEGA HAIR SALOON</h1>
+            <p>Premium Men's Grooming in Nandyala</p>
+            <p>Professional Cuts • Expert Styling • Home Service Available</p>
+            <a href="#booking" class="cta-btn">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <!-- ✂️ CUTS -->
+                <div class="service-card">
+                    <h3> Hair Cut</h3>
+                    <img src="https://tse1.explicit.bing.net/th/id/OIP.oBLfwWphUT8dOTUW8gAQ6gHaNK?rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="Hair Cut" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Modern and classic haircuts tailored to your style</p>
+                    <div class="price">₹100</div>
+                </div>
+                <div class="service-card">
+                    <h3> Shave</h3>
+                    <img src="https://static.wixstatic.com/media/6fe58d_08cb0c1bfdf94a189a54258578f75e30~mv2.jpg/v1/fill/w_804,h_407,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/6fe58d_08cb0c1bfdf94a189a54258578f75e30~mv2.jpg" 
+                         alt="Shave" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Clean, professional traditional shave experience</p>
+                    <div class="price">₹60</div>
+                </div>
+                <div class="service-card">
+                    <h3>  Trim</h3>
+                    <img src="https://img.freepik.com/free-photo/anonymous-barber-trimming-beard-man_23-2147778850.jpg?w=740&t=st=1708039008~exp=1708039608~hmac=eb4fa3861a463b8380d14e634231ad14f7804e9f5b990310de07df2c74e5b939" 
+                         alt="Trim" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Expert beard shaping and precision trimming</p>
+                    <div class="price">₹60</div>
+                </div>
+                <div class="service-card">
+                    <h3> Hair Cut + Beard</h3>
+                    <img src="https://img.freepik.com/premium-photo/man-getting-his-hair-cut-barber-shop_662214-485751.jpg" 
+                         alt="Hair Cut + Shape" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Complete grooming package for the modern man</p>
+                    <div class="price">₹150</div>
+                </div>
+                <!-- 🎨 COLORING -->
+                <div class="service-card">
+                    <h3> Hair Cut + Beard + Colour</h3>
+                    <img src="https://as1.ftcdn.net/v2/jpg/04/55/17/14/1000_F_455171429_tbjJEhQvo7uiy3VaK9QaelCrP9Hv8356.jpg" 
+                         alt="Hair Cut + Shape + Colour" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Full transformation with premium styling and color</p>
+                    <div class="price">₹250</div>
+                </div>
+                <div class="service-card">
+                    <h3> Hair Colour</h3>
+                    <img src="https://static.wixstatic.com/media/4fda8e_9d232439c09947848069e1a65030f9d3~mv2.jpg/v1/fill/w_1000,h_1000,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4fda8e_9d232439c09947848069e1a65030f9d3~mv2.jpg" 
+                         alt="Hair Colour" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Professional hair coloring with quality products</p>
+                    <div class="price">₹100</div>
+                </div>
+                <!-- 💆 SERVICES -->
+                <div class="service-card">
+                    <h3> Oil Massage</h3>
+                    <img src="https://th.bing.com/th/id/R.197b8f50c496e5bf23e91c98051a5f6d?rik=DHf4DbVdtgr3gA&riu=http%3a%2f%2ftouchlifespa.com%2fimg-optimized%2fhead.webp&ehk=a9g8XIzd1UlIUZ%2fzWl68cPpiQwcFLekxH5lW1elAQzo%3d&risl=&pid=ImgRaw&r=0" 
+                         alt="Oil Massage" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Relaxing scalp massage with nourishing oils</p>
+                    <div class="price">₹70</div>
+                </div>
+                <div class="service-card">
+                    <h3> Scrub</h3>
+                    <img src="https://img.freepik.com/premium-photo/man-receiving-face-massage-beauty-salon_1111209-67752.jpg" 
+                         alt="Scrub" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Deep cleansing facial scrub for refreshed skin</p>
+                    <div class="price">₹150</div>
+                </div>
+                <div class="service-card">
+                    <h3> D-Tan</h3>
+                    <img src="https://dandiesbarber.com/ws/media-library/4c801d7b2e984e0f8499dc179fcc65ff/mens-facial.jpg" 
+                         alt="D-Tan" 
+                         style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; pointer-events: none; user-select: none;" 
+                         oncontextmenu="return false" 
+                         draggable="false">
+                    <p>Professional de-tanning treatment for even skin tone</p>
+                    <div class="price">₹150</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About OMEGA Hair Saloon</h2>
+                    <p>Located in the heart of Nandyala at Deva Nagar Colony, OMEGA Hair Saloon has been serving the community with premium men's grooming services for over 15 years.</p>
+                    <br>
+                    <p>Founded by Balu, our salon combines traditional barbering techniques with modern styling trends. We pride ourselves on delivering exceptional service and ensuring every client leaves feeling confident and refreshed.</p>
+                    <br>
+                    <p>What sets us apart is our commitment to quality and our unique home service offering - bringing professional grooming directly to your doorstep when you can't visit our salon.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="OMEGA Hair Saloon Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Appointment</h2>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (Optional)</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="service">Select Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">Choose a service</option>
+                        <option value="Hair Cut (₹100)">Hair Cut (₹100)</option>
+                        <option value="Shave (₹60)">Shave (₹60)</option>
+                        <option value="Shape + Trim (₹60)">Shape + Trim (₹60)</option>
+                        <option value="Hair Cut + Shape (₹150)">Hair Cut + Shape (₹150)</option>
+                        <option value="Hair Cut + Shape + Colour (₹250)">Hair Cut + Shape + Colour (₹250)</option>
+                        <option value="Hair Colour (₹100)">Hair Colour (₹100)</option>
+                        <option value="Oil Massage (₹70)">Oil Massage (₹70)</option>
+                        <option value="Scrub (₹150)">Scrub (₹150)</option>
+                        <option value="D-Tan (₹150)">D-Tan (₹150)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select time</option>
+                        <option value="8:00 AM">8:00 AM</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                        <option value="7:00 PM">7:00 PM</option>
+                        <option value="8:00 PM">8:00 PM</option>
+                        <option value="9:00 PM">9:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="homeService" style="width: auto; margin-right: 10px;">
+                        Request Home Service (+₹100)
+                    </label>
+                </div>
+                <div class="form-group" id="locationGroup" style="display: none;">
+                    <label for="location">Your Address (Required for Home Service)</label>
+                    <textarea id="location" name="location" placeholder="Enter your complete address with landmarks..." style="height: 80px; resize: vertical;"></textarea>
+                    <button type="button" id="currentLocationBtn" style="margin-top: 10px; padding: 8px 15px; background: #30363D; color: #FF6B35; border: 1px solid #FF6B35; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">📍 Send My Current Location</button>
+                </div>
+                <button type="submit" class="submit-btn">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>📍 Location</h3>
+                    <p>FFGF+H6P, Deva Nagar Colony<br>Nandyala, Andhra Pradesh 518501</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📞 Phone</h3>
+                    <p>+91 9182097974<br>+91 9703336945</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <p>baluomega143@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>🕒 Hours</h3>
+                    <p>Monday - Sunday<br>8:00 AM - 9:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 OMEGA Hair Saloon. All rights reserved. | Nandyala's Premier Men's Grooming Destination</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const homeService = document.getElementById('homeService').checked ? 'Yes (+₹100)' : 'No';
+            const location = document.getElementById('location').value;
+            
+            let message = `🎯 NEW BOOKING REQUEST\n\n👤 Customer: ${name}\n📱 Phone: ${phone}\n📧 Email: ${email || 'Not provided'}\n✂️ Service: ${service}\n📅 Date: ${date}\n🕐 Time: ${time}\n🏠 Home Service: ${homeService}`;
+            
+            if (document.getElementById('homeService').checked && location) {
+                message += `\n📍 Address: ${location}`;
+            }
+            
+            message += `\n\nPlease confirm this appointment.`;
+            
+            // Send WhatsApp directly (works immediately)
+            const whatsappUrl = `https://wa.me/919182097974?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            alert('✅ Booking submitted! WhatsApp opened to notify owner.');
+            
+            document.getElementById('bookingForm').reset();
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        
+        // Show/hide location field based on home service selection
+        document.getElementById('homeService').addEventListener('change', function() {
+            const locationGroup = document.getElementById('locationGroup');
+            const locationField = document.getElementById('location');
+            
+            if (this.checked) {
+                locationGroup.style.display = 'block';
+                locationField.required = true;
+            } else {
+                locationGroup.style.display = 'none';
+                locationField.required = false;
+                locationField.value = '';
+            }
+        });
+        
+        // Get current location
+        document.getElementById('currentLocationBtn').addEventListener('click', function() {
+            const btn = this;
+            const locationField = document.getElementById('location');
+            
+            btn.innerHTML = '📍 Getting Location...';
+            btn.disabled = true;
+            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        const googleMapsLink = `https://maps.google.com/?q=${lat},${lng}`;
+                        
+                        locationField.value = `📍 Current Location: ${lat}, ${lng}\nGoogle Maps: ${googleMapsLink}`;
+                        btn.innerHTML = '✅ Location Added';
+                        btn.style.background = '#28a745';
+                        btn.style.borderColor = '#28a745';
+                        btn.style.color = 'white';
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = '📍 Send My Current Location';
+                            btn.style.background = '#30363D';
+                            btn.style.borderColor = '#FF6B35';
+                            btn.style.color = '#FF6B35';
+                            btn.disabled = false;
+                        }, 2000);
+                    },
+                    function(error) {
+                        btn.innerHTML = '❌ Location Access Denied';
+                        btn.style.background = '#dc3545';
+                        btn.style.borderColor = '#dc3545';
+                        btn.style.color = 'white';
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = '📍 Send My Current Location';
+                            btn.style.background = '#30363D';
+                            btn.style.borderColor = '#FF6B35';
+                            btn.style.color = '#FF6B35';
+                            btn.disabled = false;
+                        }, 2000);
+                        
+                        alert('Please allow location access or enter your address manually.');
+                    }
+                );
+            } else {
+                alert('Geolocation is not supported by this browser. Please enter your address manually.');
+                btn.innerHTML = '📍 Send My Current Location';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
